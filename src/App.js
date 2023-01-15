@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Homepage from "./Pages/Homepage/Homepage";
+import { Route, Routes } from "react-router-dom";
+import Shop from "./Pages/Shop/Shop";
+import Header from "./Component/header/Header";
+import SignInOut from "./Pages/signinform/signInOut";
+import { useEffect, useState } from "react";
+import { auth } from "./firebase/firebase";
 
 function App() {
+  const [currentUser, setcuurentUser] = useState(null);
+
+  useEffect(() => {
+    let unsubscribeFromAuth = null;
+    unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+      setcuurentUser(user);
+    });
+    return () => {
+      unsubscribeFromAuth();
+    };
+  }, []);
+
+  console.log(currentUser);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header currentUser={currentUser} />
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/signin" element={<SignInOut />} />
+      </Routes>
     </div>
   );
 }
