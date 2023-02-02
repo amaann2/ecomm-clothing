@@ -15,3 +15,5 @@ firestore.doc("/user/id/collectionname/docname");
 
 //to query the collection
 firestore.collection("/user/id/collectionname");
+
+

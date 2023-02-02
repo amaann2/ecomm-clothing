@@ -5,22 +5,30 @@ import Shop from "./Pages/Shop/Shop";
 import Header from "./Component/header/Header";
 import SignInOut from "./Pages/signinform/signInOut";
 import { useEffect, useState } from "react";
-import { auth } from "./firebase/firebase";
+import { auth, createUserProfileDocument } from "./firebase/firebase";
 
 function App() {
   const [currentUser, setcuurentUser] = useState(null);
 
   useEffect(() => {
     let unsubscribeFromAuth = null;
-    unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      setcuurentUser(user);
+    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapShot) => {
+          setcuurentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      } else {
+        setcuurentUser(userAuth);
+      }
     });
     return () => {
       unsubscribeFromAuth();
     };
   }, []);
-
-  console.log(currentUser);
 
   return (
     <div className="App">
