@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     let unsubscribeFromAuth = null;
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      //if there is a user 
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot((snapShot) => {
@@ -21,6 +22,7 @@ function App() {
             ...snapShot.data(),
           });
         });
+        //if there is no user
       } else {
         setcuurentUser(userAuth);
       }

@@ -18,12 +18,16 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
+  // if user Auth not there
   if (!userAuth) {
     return;
   }
+
+  // the document is creating in users doc aud id
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapshot = await userRef.get();
 
+  // if snapshot.exist is false means there is no document of above snapshot
   if (!snapshot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
