@@ -32,6 +32,7 @@ function App() {
       unsubscribeFromAuth();
     };
   }, []);
+  console.log(currentUser);
 
   return (
     <div className="App">

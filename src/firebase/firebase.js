@@ -11,12 +11,19 @@ const config = {
   appId: "1:769594485177:web:d2a8f33879d2ad1f8cae68",
   measurementId: "G-WV98CZJXDZ",
 };
-
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+
+//---------------authentication google---------------------
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+
+export const SignInWithGoogle = () => auth.signInWithPopup(provider);
+
+//  create user document
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   // if user Auth not there
   if (!userAuth) {
@@ -44,10 +51,5 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
   return userRef;
 };
-
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
-
-export const SignInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
