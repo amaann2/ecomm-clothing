@@ -40,13 +40,17 @@ function App({ setCurrentUser }) {
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/shop" element={<Shop />} />
         <Route exact path="/signin" element={<SignInOut />} />
+
       </Routes>
     </div>
   );
 }
 
+const mapStateToProps = (state) => ({
+  setCurrentUser: state.user.setCurrentUser,
+});
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
