@@ -7,7 +7,9 @@ import SignInOut from "./Pages/signinform/signInOut";
 import { useEffect } from "react";
 import { auth, createUserProfileDocument } from "./firebase/firebase";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./Redux/UserReducer/userAction";
+import { setCurrentUser } from "./Redux/User/userAction";
+import { selectCurrentUser } from "./Redux/User/UserSelector";
+import CheckOut from "./Pages/checkout/CheckOut";
 
 function App({ setCurrentUser }) {
   useEffect(() => {
@@ -40,14 +42,14 @@ function App({ setCurrentUser }) {
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/shop" element={<Shop />} />
         <Route exact path="/signin" element={<SignInOut />} />
-
+        <Route exact path="/checkout" element={<CheckOut />} />
       </Routes>
     </div>
   );
 }
 
 const mapStateToProps = (state) => ({
-  setCurrentUser: state.user.setCurrentUser,
+  setCurrentUser: selectCurrentUser(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
