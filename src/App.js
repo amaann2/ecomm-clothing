@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./Redux/User/userAction";
 import { selectCurrentUser } from "./Redux/User/UserSelector";
 import CheckOut from "./Pages/checkout/CheckOut";
+import CollectionPage from "./Pages/collectionPage/CollectionPage";
 
 function App({ setCurrentUser }) {
   useEffect(() => {
@@ -36,15 +37,18 @@ function App({ setCurrentUser }) {
   }, [setCurrentUser]);
 
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-        <Route exact path="/shop" element={<Shop />} />
-        <Route exact path="/signin" element={<SignInOut />} />
-        <Route exact path="/checkout" element={<CheckOut />} />
-      </Routes>
-    </div>
+    <>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:id" element={<CollectionPage />} />
+          <Route exact path="/signin" element={<SignInOut />} />
+          <Route exact path="/checkout" element={<CheckOut />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

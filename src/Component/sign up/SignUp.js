@@ -25,7 +25,7 @@ const SignUp = () => {
             await createUserProfileDocument(user, { displayName });
             setinput("");
         } catch (error) {
-            console.log(error);
+            alert(error);
         }
     };
 

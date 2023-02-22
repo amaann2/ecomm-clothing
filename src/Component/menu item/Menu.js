@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./menu-item.scss";
-const Menu = ({ title, image, size }) => {
+const Menu = ({ title, image, size, linkUrl }) => {
   return (
     <>
       <div
@@ -9,10 +10,12 @@ const Menu = ({ title, image, size }) => {
           backgroundImage: `url(${image})`,
         }}
       >
-        <div className="content">
-          <div className="title">{title}</div>
-          <span className="subtitle">Shop now</span>
-        </div>
+        <Link to={linkUrl}>
+          <div className="content">
+            <div className="title">{title}</div>
+            <span className="subtitle">shop now</span>
+          </div>
+        </Link>
       </div>
     </>
   );
