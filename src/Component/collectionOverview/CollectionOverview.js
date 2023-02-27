@@ -4,6 +4,7 @@ import { selectShop } from "../../Redux/shop/shopSelector";
 import Collectionpreview from "../collection preview/Collectionpreview";
 import "./collectionoverview.scss";
 const CollectionOverview = ({ data }) => {
+  console.log(data)
   return (
     <div className="collection-overview">
       {data.title}

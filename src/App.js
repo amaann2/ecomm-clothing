@@ -11,6 +11,8 @@ import { setCurrentUser } from "./Redux/User/userAction";
 import { selectCurrentUser } from "./Redux/User/UserSelector";
 import CheckOut from "./Pages/checkout/CheckOut";
 import CollectionPage from "./Pages/collectionPage/CollectionPage";
+import Contact from "./Pages/contact/Contact";
+import LikePage from "./Pages/like page/LikePage";
 
 function App({ setCurrentUser }) {
   useEffect(() => {
@@ -43,9 +45,11 @@ function App({ setCurrentUser }) {
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/shop/:id" element={<CollectionPage />} />
           <Route exact path="/signin" element={<SignInOut />} />
           <Route exact path="/checkout" element={<CheckOut />} />
+          <Route exact path="/likePage" element={<LikePage />} />
         </Routes>
       </div>
     </>

@@ -8,6 +8,7 @@ import CartIcon from "../cartIcon/CartIcon";
 import CartDropdown from "../cartDropdown/CartDropdown";
 import { selectCurrentUser } from "../../Redux/User/UserSelector";
 import { selectCartHidden } from "../../Redux/cart/cartSelector";
+import { AiOutlineHeart } from "react-icons/ai";
 const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
@@ -15,11 +16,11 @@ const Header = ({ currentUser, hidden }) => {
         <Logo className="logo" />
       </Link>
       <div className="options">
+        <Link to="/" className="option">
+          Home
+        </Link>
         <Link to="/shop" className="option">
           Shop
-        </Link>
-        <Link to="/contact" className="option">
-          Contact
         </Link>
 
         {currentUser ? (
@@ -32,6 +33,9 @@ const Header = ({ currentUser, hidden }) => {
           </Link>
         )}
         <CartIcon />
+        <Link className="option" to="/likePage">
+          <AiOutlineHeart className="like-icon" />
+        </Link>
       </div>
       {hidden ? null : <CartDropdown />}
     </div>

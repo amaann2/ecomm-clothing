@@ -24,6 +24,7 @@ const StripeButton = ({ price }) => {
         panelLabel="Pay Now"
         token={ontoken}
         stripeKey={publishableKey}
+        currency="INR"
       />
     </div>
   );

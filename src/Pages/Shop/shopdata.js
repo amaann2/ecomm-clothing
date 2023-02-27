@@ -9,6 +9,7 @@ const SHOP_DATA = [
         name: "Brown Brim",
         imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
         price: 25,
+
       },
       {
         id: 2,
@@ -54,6 +55,24 @@ const SHOP_DATA = [
       },
       {
         id: 9,
+        name: "Blue Snapback",
+        imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
+        price: 16,
+      },
+      {
+        id: 10,
+        name: "Blue Snapback",
+        imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
+        price: 16,
+      },
+      {
+        id: 11,
+        name: "Blue Snapback",
+        imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
+        price: 16,
+      },
+      {
+        id: 12,
         name: "Blue Snapback",
         imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
         price: 16,
