@@ -41,7 +41,10 @@ function App({ setCurrentUser }) {
   return (
     <>
       <div className="App">
-        <Header />
+        <div className="header">
+
+          <Header />
+        </div>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/shop" element={<Shop />} />

@@ -1,15 +1,21 @@
 .header {
     height: 70px;
-    width: 99%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    background-color: #2874f0;
+    position: fixed;
+    top: 0;
+    margin-left: -20px;
+    z-index: 100;
 
 
     .logo-container {
         width: 50px;
         height: 70px;
-        padding: 25px;
+        padding: 18px 120px;
+
 
     }
 
@@ -19,15 +25,71 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin-right: 40px;
+        // margin-right: 40px;
 
         .option {
+            color: white;
             padding: 10px 15px;
+            font-size: 19px;
+            font-weight: 600;
             cursor: pointer;
+            letter-spacing: 1px;
         }
     }
-    .like-icon{
-        font-size: 25px;
+
+    .like-icon {
+        margin-top: 6px;
+        font-size: 35px;
+
+
+    }
+
+    .count {
+        position: relative;
+        right: 10px;
+        bottom: 20px;
+        background-color: aliceblue;
+        color: black;
+        padding: 4px;
+        border-radius: 50%;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .header {
+        margin-left: -20px;
+        width: 100vw;
+        // margin-right: -60px;
+
+        .logo-container {
+
+            padding: 14px 40px;
+        }
+
+        .options {
+            width: 100%;
+            margin-left: 35px;
+
+            .option {
+                font-size: 16px;
+                font-weight: 500;
+                padding: 1px 6px;
+
+            }
+        }
+
+        .like-icon {
+            margin-top: 6px;
+            font-size: 28px;
+
+
+        }
+
+        .count {
+
+            padding: 3px;
+        }
     }
 
 }

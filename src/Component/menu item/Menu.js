@@ -7,7 +7,7 @@ const Menu = ({ title, image, size, linkUrl }) => {
       <div
         className={`${size} menu-item`}
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${image})`,backgroundSize:'cover'
         }}
       >
         <Link to={linkUrl}>
@@ -19,6 +19,6 @@ const Menu = ({ title, image, size, linkUrl }) => {
       </div>
     </>
   );
-};
+}; 
 
 export default Menu;

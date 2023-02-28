@@ -19,8 +19,18 @@
         padding: 10px 20px;
 
         .name {
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .price{
             font-size: 16px;
             font-weight: bold;
+
+            // width: 80%;
+
+            .icon-rupees{
+                font-size: 13px;
+            }
         }
     }
 

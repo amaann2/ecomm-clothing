@@ -6,7 +6,9 @@ import { connect } from "react-redux";
 import { selectCurrentUser } from "../../Redux/User/UserSelector";
 import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { FaRupeeSign } from "react-icons/fa";
 import { addLike, removeLike } from "../../Redux/like/likeaction";
+
 const Collectionitem = ({
   item,
   addItem,
@@ -17,6 +19,7 @@ const Collectionitem = ({
 }) => {
   const { name, price, imageUrl } = item;
   const likedItem = likeItem.find((likeitem) => likeitem.id === item.id);
+
   return (
     <div className="collection-item">
       {likedItem ? (
@@ -27,7 +30,10 @@ const Collectionitem = ({
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="collection-footer">
         <span className="name">{name}</span>
-        <span className="price">{price}</span>
+        <span className="price">
+          <FaRupeeSign />
+          {price}
+        </span>
       </div>
       {currentUser ? (
         <CustomButton onClick={() => addItem(item)} inverted>

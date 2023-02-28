@@ -1,10 +1,20 @@
 .collection-page {
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
 
-    .title {
-        font-size: 38px;
-        margin: 0 auto 30px;
+    .heading {
+        display: flex;
+
+        .title {
+            font-size: 38px;
+            margin: 0 auto 30px;
+        }
+
+        .dropdownlist {
+            height: 30px;
+
+        }
     }
 
     .items {
@@ -17,6 +27,29 @@
         & .collection-item {
             margin-bottom: 30px;
             margin-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .collection-page {
+        flex-direction: column;
+        justify-content: space-around;
+
+        .heading {
+            .title {
+                font-size: 30px;
+                margin: 0 auto 20px;
+            
+            }
+            .dropdownlist{
+                position: relative;
+                right: 20px;
+            }
+        }
+
+        .items {
+            grid-template-columns: 1fr;
         }
     }
 }

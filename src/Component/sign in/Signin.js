@@ -53,7 +53,7 @@ const Signin = () => {
           </CustomButton>
 
           <CustomButton onClick={SignInWithGoogle} isGoogleSignIn>
-            Sign in with google
+            google
           </CustomButton>
         </div>
       </form>

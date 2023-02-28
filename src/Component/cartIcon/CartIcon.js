@@ -5,11 +5,12 @@ import "./cart-icon.scss";
 import { toggleCart } from "../../Redux/cart/cartAction";
 import { selectCartItemCount } from "../../Redux/cart/cartSelector";
 import { selectCurrentUser } from "../../Redux/User/UserSelector";
-
+import { AiOutlineShopping } from "react-icons/ai";
 const CartIcon = ({ toggleCart, itemCount, currentUser }) => {
   return (
     <div className="cart-icon" onClick={toggleCart}>
-      <Cart className="shopping-icon" />
+      {/* <Cart className="shopping-icon" /> */}
+      <AiOutlineShopping className="shopping-icon" />
       <span className="item-count">{currentUser ? itemCount : 0}</span>
     </div>
   );

@@ -4,10 +4,9 @@ import Collectionitem from "../../Component/collection item/Collectionitem";
 import "../../Component/collection preview/collectionpreview.scss"
 import "./likepage.scss"
 const LikePage = ({ likeitem }) => {
-    console.log(likeitem);
     return (
         <div className="collection-preview">
-            <h1 className="title"> Like Item </h1>
+            <h1 className="title"> WishList</h1>
             {likeitem < 1 ? "no item in like page" :
                 <div className="item">
                     {likeitem.map((item) => (
