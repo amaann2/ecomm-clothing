@@ -6,17 +6,29 @@
 
 
     .title {
-        font-size: 28px;
+        // width: 70px;
+        font-size: 50px;
         margin-bottom: 25px;
         text-align: center;
+
 
     }
 
     .preview {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         flex-wrap: wrap;
     }
+}
+
+.view-button {
+    margin: 20px 55px;
+    background-color: #ff523b;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+
 }
 
 @media only screen and (max-width: 800px) {

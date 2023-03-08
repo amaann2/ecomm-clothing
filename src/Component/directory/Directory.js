@@ -6,11 +6,14 @@ import { selectDirectorySection } from "../../Redux/directory/directorySelector"
 
 const Directory = ({ data }) => {
   return (
-    <div className="directory-menu">
-      {data.map(({ id, ...otherprops }) => (
-        <Menu key={id} {...otherprops} />
-      ))}
-    </div>
+    <>
+      <h2>Category</h2>
+      <div className="directory-menu">
+        {data.map(({ id, ...otherprops }) => (
+          <Menu key={id} {...otherprops} />
+        ))}
+      </div>
+    </>
   );
 };
 const mapStateToProps = (state) => ({

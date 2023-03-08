@@ -13,7 +13,8 @@ import CheckOut from "./Pages/checkout/CheckOut";
 import CollectionPage from "./Pages/collectionPage/CollectionPage";
 import Contact from "./Pages/contact/Contact";
 import LikePage from "./Pages/like page/LikePage";
-
+import Footer from "./Component/Footer/Footer";
+import Banner from "./Component/Banner/Banner";
 function App({ setCurrentUser }) {
   useEffect(() => {
     let unsubscribeFromAuth = null;
@@ -42,8 +43,8 @@ function App({ setCurrentUser }) {
     <>
       <div className="App">
         <div className="header">
-
           <Header />
+          
         </div>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -55,6 +56,7 @@ function App({ setCurrentUser }) {
           <Route exact path="/likePage" element={<LikePage />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }

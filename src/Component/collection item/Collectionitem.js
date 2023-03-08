@@ -31,7 +31,7 @@ const Collectionitem = ({
       <div className="collection-footer">
         <span className="name">{name}</span>
         <span className="price">
-          <FaRupeeSign />
+          <FaRupeeSign  className="price-icon"/>
           {price}
         </span>
       </div>

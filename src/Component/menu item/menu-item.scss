@@ -37,10 +37,12 @@
         padding: 0 25px;
         flex-direction: column;
         background-color: white;
-        opacity: 0.7;
+        background-color: #ff523b;
+        color: white;
+        opacity: 0.9;
 
         &:hover {
-            opacity: 0.9;
+            opacity: 1;
         }
 
     }
@@ -50,6 +52,7 @@
         margin-bottom: 6px;
         font-size: 22px;
         color: #4a4a4a;
+        color: white;
     }
 
     .subtitle {

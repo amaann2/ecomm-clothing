@@ -4,7 +4,7 @@ import Collectionitem from "../collection item/Collectionitem";
 import "./collectionpreview.scss";
 
 const Collectionpreview = ({ title, id, items }) => {
-  return (
+  return (<>
     <div className="collection-preview">
       <h1 className="title">
         <Link to={`/shop/${id}`}>{title.toUpperCase()}</Link>
@@ -17,6 +17,9 @@ const Collectionpreview = ({ title, id, items }) => {
           ))}
       </div>
     </div>
+    <Link to={`/shop/${id}`}><button className="view-button">view more</button></Link>
+
+  </>
   );
 };
 

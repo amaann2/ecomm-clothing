@@ -1,0 +1,10 @@
+.footer hr {
+    border: none;
+    background-color: #b5bb55;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.copyright {
+    text-align: center;
+}
