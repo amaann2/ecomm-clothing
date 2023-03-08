@@ -1,7 +1,7 @@
 import React from "react";
 import "./Homepage.scss";
 import Directory from "../../Component/directory/Directory";
-import Banner from "../../Component/Banner/Banner";
+// import Banner from "../../Component/Banner/Banner";
 import Testimonial from "../../Component/testimonial/Testimonial";
 import Brand from "../../Component/brand/Brand";
 import Slider from "react-slick";

@@ -14,7 +14,7 @@ import CollectionPage from "./Pages/collectionPage/CollectionPage";
 import Contact from "./Pages/contact/Contact";
 import LikePage from "./Pages/like page/LikePage";
 import Footer from "./Component/Footer/Footer";
-import Banner from "./Component/Banner/Banner";
+// import Banner from "./Component/Banner/Banner";
 function App({ setCurrentUser }) {
   useEffect(() => {
     let unsubscribeFromAuth = null;
