@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { selectCurrentUser } from "../../Redux/User/UserSelector";
 import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { FaRupeeSign } from "react-icons/fa";
 import { addLike, removeLike } from "../../Redux/like/likeaction";
 import Star from "../Star/Star";
 const Collectionitem = ({

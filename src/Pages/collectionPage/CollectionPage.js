@@ -11,10 +11,10 @@ const CollectionPage = ({ data }) => {
   const product = data.find((prod) => prod.id === parseInt(id));
   const { title, items } = product;
   const [value, setvalue] = useState();
-  const filter = (e) => {
-    const valuee = e.target.value;
-    setvalue(valuee);
-  };
+  // const filter = (e) => {
+  //   const valuee = e.target.value;
+  //   setvalue(valuee);
+  // };
   const filterproduct = items.filter(
     (data) => data.price < value && data.price > value - 10000
   );
