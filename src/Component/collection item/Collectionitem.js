@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { FaRupeeSign } from "react-icons/fa";
 import { addLike, removeLike } from "../../Redux/like/likeaction";
-
+import Star from "../Star/Star";
 const Collectionitem = ({
   item,
   addItem,
@@ -17,37 +17,44 @@ const Collectionitem = ({
   likeItem,
   removeLike,
 }) => {
-  const { name, price, imageUrl } = item;
+  const { name, price, imageUrl, rating, id } = item;
   const likedItem = likeItem.find((likeitem) => likeitem.id === item.id);
 
   return (
-    <div className="collection-item">
-      {likedItem ? (
-        <AiFillHeart className="like-icon" onClick={() => removeLike(item)} />
-      ) : (
-        <AiOutlineHeart className="like-icon" onClick={() => addlike(item)} />
-      )}
-      <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
-      <div className="collection-footer">
-        <span className="name">{name}</span>
-        <span className="price">
-          <FaRupeeSign  className="price-icon"/>
-          {price}
-        </span>
+    <Link to={`/singleproduct/${id}`}>
+      <div className="collection-item">
+        {likedItem ? (
+          <AiFillHeart className="like-icon" onClick={() => removeLike(item)} />
+        ) : (
+          <AiOutlineHeart className="like-icon" onClick={() => addlike(item)} />
+        )}
+        <div
+          className="image"
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        />
+        <div className="collection-footer">
+          <span className="name">{name}</span>
+          <span className="price">
+            <FaRupeeSign className="price-icon" />
+            {price}
+            {id}
+          </span>
+          <Star rating={rating} />
+        </div>
+        {currentUser ? (
+          <CustomButton onClick={() => addItem(item)} inverted>
+            Add To Cart
+          </CustomButton>
+        ) : (
+          //
+          <CustomButton inverted>
+            {" "}
+            <Link to={"/signin"}>Add To cart</Link>{" "}
+          </CustomButton>
+          //
+        )}
       </div>
-      {currentUser ? (
-        <CustomButton onClick={() => addItem(item)} inverted>
-          Add To Cart
-        </CustomButton>
-      ) : (
-        //
-        <CustomButton inverted>
-          {" "}
-          <Link to={"/signin"}>Add To cart</Link>{" "}
-        </CustomButton>
-        //
-      )}
-    </div>
+    </Link>
   );
 };
 

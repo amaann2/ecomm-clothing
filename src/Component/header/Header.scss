@@ -67,23 +67,23 @@
 @media screen and (max-width:800px) {
     .header {
         // margin-left: -20px;
-        width: 100%;
+        width: 100vw;
         // margin-right: -60px;
 
         .logo-container {
-
-            padding: 14px 35px;
+            width: 15%;
+            padding: 14px 0px;
         }
 
         .options {
-            width: 100%;
-            margin-left: 20px;
+            width: 80%;
+            margin-left: 0px;
 
 
             .option {
                 font-size: 16px;
                 font-weight: 500;
-                padding: 1px 5px;
+                padding: 1px 2px;
 
             }
         }

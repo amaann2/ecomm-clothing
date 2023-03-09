@@ -14,8 +14,9 @@ import CollectionPage from "./Pages/collectionPage/CollectionPage";
 import Contact from "./Pages/contact/Contact";
 import LikePage from "./Pages/like page/LikePage";
 import Footer from "./Component/Footer/Footer";
+import SingleProduct from "./Pages/single product page/SingleProduct";
 // import Banner from "./Component/Banner/Banner";
-function App({ setCurrentUser }) {
+function App({ setCurrentUser, data }) {
   useEffect(() => {
     let unsubscribeFromAuth = null;
     unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -44,7 +45,6 @@ function App({ setCurrentUser }) {
       <div className="App">
         <div className="header">
           <Header />
-          
         </div>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -54,6 +54,11 @@ function App({ setCurrentUser }) {
           <Route exact path="/signin" element={<SignInOut />} />
           <Route exact path="/checkout" element={<CheckOut />} />
           <Route exact path="/likePage" element={<LikePage />} />
+          <Route
+            exact
+            path="/singleproduct/:id"
+            element={<SingleProduct  />}
+          />
         </Routes>
       </div>
       <Footer />
