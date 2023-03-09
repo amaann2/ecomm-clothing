@@ -6,7 +6,8 @@ import "./singleproduct.css";
 import CustomButton from "../../Component/customButton/CustomButton";
 import Star from "../../Component/Star/Star";
 import { addItem } from "../../Redux/cart/cartAction";
-const SingleProduct = ({ data, addItem }) => {
+import { addLike } from "../../Redux/like/likeaction";
+const SingleProduct = ({ data, addItem, addlike }) => {
   const { id } = useParams();
   const item = data
     .flatMap(({ items }) => items)
@@ -28,8 +29,8 @@ const SingleProduct = ({ data, addItem }) => {
           </p>
           <br />
           <CustomButton onClick={() => addItem(item)}>add to cart</CustomButton>
-          <br />
-          <CustomButton >Add to Wishlist</CustomButton>
+          {/* <br />
+          <CustomButton onClick={() => addlike(item)} disabaled>Add to Wishlist</CustomButton> */}
         </div>
       </div>
     </div>
@@ -39,6 +40,7 @@ const mapStateToProps = (state) => ({
   data: selectShop(state),
 });
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  addItem: item => dispatch(addItem(item)),
+  addlike: item => dispatch(addLike(item))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

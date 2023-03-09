@@ -1,7 +1,7 @@
 import React from "react";
 import { addItem } from "../../Redux/cart/cartAction";
 import CustomButton from "../customButton/CustomButton";
-import "./collectionitem.scss";
+import "./collectionitem.css";
 import { connect } from "react-redux";
 import { selectCurrentUser } from "../../Redux/User/UserSelector";
 import { Link } from "react-router-dom";
@@ -17,44 +17,53 @@ const Collectionitem = ({
   likeItem,
   removeLike,
 }) => {
-  const { name, price, imageUrl, rating, id } = item;
+  const { name, price, imageUrl, rating, id, discountPercentage } = item;
   const likedItem = likeItem.find((likeitem) => likeitem.id === item.id);
 
+  const discountPrice = (price * discountPercentage) / 100;
+
   return (
-    <Link to={`/singleproduct/${id}`}>
-      <div className="collection-item">
-        {likedItem ? (
-          <AiFillHeart className="like-icon" onClick={() => removeLike(item)} />
-        ) : (
-          <AiOutlineHeart className="like-icon" onClick={() => addlike(item)} />
-        )}
-        <div
-          className="image"
-          style={{ backgroundImage: `url(${imageUrl})` }}
-        />
-        <div className="collection-footer">
-          <span className="name">{name}</span>
-          <span className="price">
-            <FaRupeeSign className="price-icon" />
-            {price}
-            {id}
-          </span>
-          <Star rating={rating} />
-        </div>
+    <div className="collection-item">
+      <div
+        className="image"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      >
+        <Link to={`/singleproduct/${id}`}>
+        </Link>
+      </div>
+      <div className="collection-footer">
+        <span className="name">{name}</span>
+
+
+        <span className="price">
+          {/* <FaRupeeSign className="price-icon" /> */}
+         <span className="original-price">Rs. {price - discountPrice}</span> 
+          <span className="cutted-price"><s>Rs. {price}</s></span>
+          <span className="discount-percentage">({discountPercentage} % off)</span>
+        </span>
+
+
+
+        <Star rating={rating} />
+      </div>
+      <div className="item-button">
         {currentUser ? (
-          <CustomButton onClick={() => addItem(item)} inverted>
+          <CustomButton onClick={() => addItem(item)}>
             Add To Cart
           </CustomButton>
         ) : (
-          //
-          <CustomButton inverted>
+          <CustomButton >
             {" "}
             <Link to={"/signin"}>Add To cart</Link>{" "}
           </CustomButton>
-          //
+        )}
+        {likedItem ? (
+          <AiFillHeart className="likee-icon" onClick={() => removeLike(item)} />
+        ) : (
+          <AiOutlineHeart className="likee-icon" onClick={() => addlike(item)} />
         )}
       </div>
-    </Link>
+    </div>
   );
 };
 

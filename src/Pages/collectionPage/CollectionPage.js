@@ -26,7 +26,7 @@ const CollectionPage = ({ data }) => {
     <div className="collection-page">
       <div className="heading">
         <h2 className="title">{title}</h2>
-        <select
+        {/* <select
           name="price"
           id="price"
           className="dropdownlist"
@@ -39,7 +39,7 @@ const CollectionPage = ({ data }) => {
           <option value="20000">10000 - 20000</option>
           <option value="30000">20000 - 30000</option>
           <option value="40000">30000 - 40000</option>
-        </select>
+        </select> */}
       </div>
       <div className="items">
         {productToRender.length === 0 ? (

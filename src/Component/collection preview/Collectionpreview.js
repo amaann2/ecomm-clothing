@@ -17,7 +17,7 @@ const Collectionpreview = ({ title, id, items }) => {
           ))}
       </div>
     </div>
-    <Link to={`/shop/${id}`}><button className="view-button">view more</button></Link>
+    {/* <Link to={`/shop/${id}`}><button className="view-button">view more</button></Link> */}
 
   </>
   );
