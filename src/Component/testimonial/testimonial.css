@@ -2,6 +2,12 @@
     padding-top: 100px;
 }
 
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px
+}
 .row {
     display: flex;
     align-items: center;

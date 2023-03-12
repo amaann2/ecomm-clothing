@@ -8,7 +8,7 @@ import StripeButton from "../../Component/stripe buton/StripeButton";
 const CheckOut = ({ cartItem, total }) => {
   return (
     <div className="checkout-page">
-      <h2 className="title">checkout</h2>
+      <h2 className="title">Checkout</h2>
       <div className="chekout-header">
         <div className="header-block">
           <span>product</span>
@@ -29,7 +29,7 @@ const CheckOut = ({ cartItem, total }) => {
       {cartItem.map((item) => (
         <ChekoutItem item={item} key={item.id} />
       ))}
-      <div className="total">TOTAL :${total}</div>
+      <div className="total">TOTAL Rs. {total}</div>
       <div className="test-warning">
         *please use the following test credit card for payment *
         <br />

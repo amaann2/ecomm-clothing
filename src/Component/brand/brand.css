@@ -1,8 +1,9 @@
-.small-container {
-    max-width: 1080px;
+.big-container {
+    max-width: 1330px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+    /* background-color: green; */
 }
 
 .row {
@@ -14,18 +15,30 @@
 
 .brands {
     margin: 100px auto;
+
 }
 
 .col-5 {
-    width: 160px;
+    margin-left: 20px;
+    width: 180px;
+
 }
 
 .col-5 img {
     width: 100%;
     cursor: pointer;
     filter: grayscale(70%);
+    height: 20px;
+    width:100px;
+
 }
 
 .col-5 img:hover {
     filter: grayscale(0);
+}
+@media only screen and (max-width:800px){
+
+    .col-5{
+        margin-top: 20px;
+    }
 }

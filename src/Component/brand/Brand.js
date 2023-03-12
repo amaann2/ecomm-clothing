@@ -1,43 +1,26 @@
-import React from 'react'
-import './brand.css'
-import img1 from '../../assests/logo-godrej.png'
-import img2 from '../../assests/logo-oppo.png'
-import img3 from '../../assests/logo-paypal.png'
-import img4 from '../../assests/logo-philips.png'
-import img5 from '../../assests/logo-coca-cola.png'
+import React from "react";
+import "./brand.css";
+import img1 from "../../assests/brand1.png.webp";
+import img2 from "../../assests/brand2.png.webp";
+import img3 from "../../assests/brand3.png.webp";
+import img4 from "../../assests/brand4.png.webp";
+import img5 from "../../assests/brand5.png.webp";
+import img6 from "../../assests/brand6.png.webp";
 const Brand = () => {
-    return (
-        <div class="brands">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-5">
-                        <img src={img1} alt="" />
-                    </div>
-
-                    <div class="col-5">
-                        <img src={img2} alt="" />
-
-                    </div>
-
-
-                    <div class="col-5">
-                        <img src={img3} alt="" />
-
-                    </div>
-
-                    <div class="col-5">
-                        <img src={img4} alt="" />
-
-                    </div>
-
-                    <div class="col-5">
-                        <img src={img5} alt="" />
-
-                    </div>
-                </div>
+  const image = [img1, img2, img3, img4, img5, img6];
+  return (
+    <div class="brands">
+      <div class="big-container">
+        <div class="row">
+          {image.map((imgg) => (
+            <div class="col-5">
+              <img src={imgg} alt="" />
             </div>
+          ))}
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Brand
+export default Brand;
