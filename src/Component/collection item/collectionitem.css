@@ -13,7 +13,13 @@
     height: 95%;
     background-size: cover;
     background-position: center;
-    /* // margin-bottom: 4px; */
+}
+.image img{
+
+    width: 100%;
+    height: 95%;
+    background-size: contain;
+    background-position: center;
 }
 
 .collection-footer {
@@ -31,6 +37,7 @@
 
 }
 
+
 .name {
     /* width: 100%; */
     /* margin-left: 10px; */
@@ -46,7 +53,8 @@
     font-size: 16px;
     padding-bottom: 5px;
 }
-.original-price{
+
+.original-price {
     font-weight: 700;
 
 }
@@ -55,7 +63,8 @@
     font-size: 14px;
 
 }
-.discount-percentage{
+
+.discount-percentage {
     color: #ff523b;
     padding-left: 8px;
 }
@@ -69,15 +78,17 @@
 .custom-button {
     width: 70%;
     padding: 0;
-    
+    color: white;
+
 }
-.cutted-price{
+
+.cutted-price {
     padding-left: 8px;
     color: gray;
 }
 
 /* .custom-button { */
-    /* position: absolute;
+/* position: absolute;
      top: 275px;
      opacity: 0.7;
     width: 80%;
@@ -111,17 +122,20 @@
 
 @media screen and (max-width:800px) {
     .collection-item {
+        justify-content: center;
+        height: 100%;
         width: 80vw;
-
-
+        margin: 24px 0;
     }
 
-    .like-icon {
 
-        left: 126px;
-    }
+}
 
-    .collection-footer {
-        font-size: 18px;
-    }
+.like-icon {
+
+    left: 126px;
+}
+
+.collection-footer {
+    font-size: 18px;
 }

@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 const signInOut = ({ currentUser }) => {
-
   if (currentUser) {
     return <Navigate to={"/"} />;
   }

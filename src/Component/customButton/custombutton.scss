@@ -6,7 +6,7 @@
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: #ff523b;
+  // background-color: #ff523b;
   background-color: black;
   color: white;
   text-transform: uppercase;
@@ -32,19 +32,19 @@
 
     &:hover {
       background-color: #357ae8;
-      border: nonw;
-    }
-  }
-
-  &.inverted {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-
-    &:hover {
-      background-color: black;
-      color: white;
       border: none;
     }
   }
+
+  // &.inverted {
+  //   background-color: white;
+  //   color: white;
+  //   border: 1px solid black;
+
+  //   &:hover {
+  //     background-color: black;
+  //     color: white;
+  //     border: none;
+  //   }
+  // }
 }

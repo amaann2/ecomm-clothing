@@ -23,20 +23,23 @@ const Collectionitem = ({
 
   return (
     <div className="collection-item">
-      <div
-        className="image"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      >
-        <Link to={`/singleproduct/${id}`}>
-        </Link>
-      </div>
+      <Link to={`/singleproduct/${id}`}>
+        <div
+          className="image"
+        // style={{ backgroundImage: `url(${imageUrl})` }}
+        >
+          <img src={imageUrl} alt="" />
+        </div>
+      </Link>
       <div className="collection-footer">
-        <span className="name">{name}</span>
+        <Link to={`/singleproduct/${id}`} >
+          <span className="name">{name}</span>
+        </Link>
 
 
         <span className="price">
           {/* <FaRupeeSign className="price-icon" /> */}
-         <span className="original-price">Rs. {price - discountPrice}</span> 
+          <span className="original-price">Rs. {price - discountPrice}</span>
           <span className="cutted-price"><s>Rs. {price}</s></span>
           <span className="discount-percentage">({discountPercentage} % off)</span>
         </span>
@@ -47,14 +50,16 @@ const Collectionitem = ({
       </div>
       <div className="item-button">
         {currentUser ? (
-          <CustomButton onClick={() => addItem(item)}>
+          <CustomButton onClick={() => addItem(item)} >
             Add To Cart
           </CustomButton>
         ) : (
-          <CustomButton >
-            {" "}
-            <Link to={"/signin"}>Add To cart</Link>{" "}
-          </CustomButton>
+          <Link to={"/signin"}>
+            <CustomButton >
+              {" "}
+              Add To cart{" "}
+            </CustomButton>
+          </Link>
         )}
         {likedItem ? (
           <AiFillHeart className="likee-icon" onClick={() => removeLike(item)} />
@@ -62,7 +67,7 @@ const Collectionitem = ({
           <AiOutlineHeart className="likee-icon" onClick={() => addlike(item)} />
         )}
       </div>
-    </div>
+    </div >
   );
 };
 
